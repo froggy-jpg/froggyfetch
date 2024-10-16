@@ -1,4 +1,4 @@
-use std::{env, process::Command};
+use std::{env, error::Error, process::{Command, Stdio}};
 
 pub fn fetch_user() -> String {
     let user = Command::new("id").arg("-un").output();
@@ -49,7 +49,7 @@ pub fn fetch_shell() -> String {
 }
 
 pub fn fetch_uptime() -> String {
-    let uptime =Command::new("uptime").arg("-p").output();
+    let uptime = Command::new("uptime").arg("-p").output();
     let uptime = match uptime {
         Ok(frog) => {
             String::from_utf8(frog.stdout)
@@ -66,3 +66,22 @@ pub fn fetch_uptime() -> String {
     };
     uptime.replace('\n', "").replace(',', "")
 }
+
+pub fn fetch_packages() -> Result<(), Box<dyn Error>> {
+    let mut packages = Command::new("pacman")
+        .arg("-Qq")
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap();
+    let mut package_count = Command::new("wc")
+        .arg("-l")
+        .stdin(Stdio::from(packages.stdout.take().unwrap()))
+        .spawn()
+        .unwrap();
+
+    packages.wait()?;
+    package_count.wait()?;
+    Ok(())
+}
+
+
