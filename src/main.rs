@@ -13,5 +13,5 @@ fn main() {
     println!("os: {os}");
     println!("shell: {shell}");
     println!("uptime: {uptime}");
-    println!("packages: {packages:?}")
+    println!("packages: {packages}")
 }

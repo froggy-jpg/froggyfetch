@@ -1,4 +1,4 @@
-use std::{env, error::Error, process::{Command, Stdio}};
+use std::{env, process::{Command, Stdio}};
 
 pub fn fetch_user() -> String {
     let user = Command::new("id").arg("-un").output();
@@ -67,21 +67,19 @@ pub fn fetch_uptime() -> String {
     uptime.replace('\n', "").replace(',', "")
 }
 
-pub fn fetch_packages() -> Result<(), Box<dyn Error>> {
-    let mut packages = Command::new("pacman")
+pub fn fetch_packages() -> String {
+    let mut child1 = Command::new("pacman")
         .arg("-Qq")
         .stdout(Stdio::piped())
         .spawn()
         .unwrap();
-    let mut package_count = Command::new("wc")
+    let child2 = Command::new("wc")
         .arg("-l")
-        .stdin(Stdio::from(packages.stdout.take().unwrap()))
-        .spawn()
+        .stdin(Stdio::from(child1.stdout.take().unwrap()))
+        .output()
         .unwrap();
-
-    packages.wait()?;
-    package_count.wait()?;
-    Ok(())
+    let package_count = String::from_utf8(child2.stdout).unwrap();
+    package_count.replace('\n', "")
 }
 
 
