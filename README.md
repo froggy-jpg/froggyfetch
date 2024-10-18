@@ -1,7 +1,7 @@
 # hi, this is froggyfetch :frog:
 
-hi, this is **froggyfetch** :frog:, an in-development open source system fetch for linux
-i am only just learning how to program in rust :crab:, so any and all contributions are very much 
+hi, this is **froggyfetch** :frog:, an in-development open source system fetch for linux\
+i am only just learning how to program in rust :crab:, so any and all contributions are very much\
 :sparkles: welcome :sparkles: 
 
 **roadmap:**
