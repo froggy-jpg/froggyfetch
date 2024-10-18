@@ -5,7 +5,7 @@ fn main() {
     let os = froggyfetch::fetch_os();
     let shell = froggyfetch::fetch_shell();
     let uptime = froggyfetch::fetch_uptime();
-    let packages = froggyfetch::fetch_packages();
+    let packages = froggyfetch::packages::fetch_packages();
 
     println!("user: {user}");
     println!("host: {hname}");
