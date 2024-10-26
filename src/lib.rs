@@ -2,7 +2,6 @@ use std::{env, process::Command};
 
 pub mod packages;
 
-
 pub fn fetch_user() -> String {
     let user = Command::new("id").arg("-un").output();
     let user = match user {
@@ -57,16 +56,16 @@ pub fn fetch_uptime() -> String {
         Ok(frog) => {
             String::from_utf8(frog.stdout)
                 .unwrap()
-                .replace("hours", "h")
-                .replace("hour", "h")
+                .replace("hours", "h ")
+                .replace("hour", "h ")
                 .replace("minutes", "m")
                 .replace("minute", "m")
-                .replace("days", "d")
-                .replace("day", "d")
+                .replace("days", "d ")
+                .replace("day", "d ")
                 .replace("up ", "")
         }
         Err(_) => "Unknown".to_string()
     };
-    uptime.replace('\n', "").replace(',', "")
+    uptime.replace('\n', "").replace(',', "").replace(" ", "")
 }
 

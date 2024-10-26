@@ -9,14 +9,14 @@ fn main() {
     let uptime = froggyfetch::fetch_uptime();
     let packages = froggyfetch::packages::fetch_packages();
 
-    println!("╭────────╮");
-    println!("│  {}  │ {}", "user".green(), user);
-    println!("│  {}  │ {}", "host".green(), hname);
-    println!("│  {}  │ {}", "krnl".green(), kernel);
-    println!("│  {}  │ {}", " os ".green(), os);
-    println!("│  {}  │ {}", "shll".green(), shell);
-    println!("├────────┤");
-    println!("│  {}  │ {}", "uptm".green(), uptime);
-    println!("│  {}  │ {}", "pkgs".green(), packages);
-    println!("╰────────╯")
+    println!("╭─────────────────────┬────────╮");
+    println!("│{}│  {}  │ {}", "        _   _        ".green(), "user".green(), user);
+    println!("│{}│  {}  │ {}", "       (.)_(.)       ".green(), "host".green(), hname);
+    println!("│{}│  {}  │ {}", "    _ (   _   ) _    ".green(), "krnl".green(), kernel);
+    println!("│{}│  {}  │ {}", r"   / \/`-----'\/ \   ".green(), " os ".green(), os);
+    println!("│{}│  {}  │ {}", r" __\ ( (     ) ) /__ ".green(), "shll".green(), shell);
+    println!("│{}├────────┤", r" )   /\ \._./ /\   ( ".green());
+    println!("│{}│  {}  │ {}", r"  )_/ /|\   /|\ \_(  ".green(), "uptm".green(), uptime);
+    println!("│{}│  {}  │ {}", "                     ".green(), "pkgs".green(), packages);
+    println!("╰─────────────────────┴────────╯")
 }
