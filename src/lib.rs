@@ -1,6 +1,4 @@
-use std::{env, process::Command};
-
-pub mod packages;
+use std::{env, process::{Command, Stdio}};
 
 pub fn fetch_user() -> String {
     let user = Command::new("id").arg("-un").output();
@@ -69,3 +67,51 @@ pub fn fetch_uptime() -> String {
     uptime.replace('\n', "").replace(',', "").replace(" ", "")
 }
 
+pub fn fetch_used_mem() -> String {
+    let mut used1 = Command::new("cat")
+        .arg("/proc/meminfo")
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap();
+    let used2 = Command::new("grep")
+        .arg("Active:")
+        .stdin(Stdio::from(used1.stdout.take().unwrap()))
+        .output()
+        .unwrap();
+    let mem_used = String::from_utf8(used2.stdout).unwrap();
+    mem_used.replace('\n', "")
+        .replace("Active:          ", "")
+        .replace(" kB", "")
+}
+
+pub fn fetch_total_mem() -> String {
+    let mut total1 = Command::new("cat")
+        .arg("/proc/meminfo")
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap();
+    let total2 = Command::new("grep")
+        .arg("MemTotal")
+        .stdin(Stdio::from(total1.stdout.take().unwrap()))
+        .output()
+        .unwrap();
+    let total3 = String::from_utf8(total2.stdout).unwrap();
+    total3.replace('\n', "")
+        .replace("MemTotal:       ", "")
+        .replace(" kB", "")
+}
+
+pub fn fetch_packages() -> String {
+    let mut count1 = Command::new("pacman")
+        .arg("-Qq")
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap();
+    let count2 = Command::new("wc")
+        .arg("-l")
+        .stdin(Stdio::from(count1.stdout.take().unwrap()))
+        .output()
+        .unwrap();
+    let package_count = String::from_utf8(count2.stdout).unwrap();
+    package_count.replace('\n', "")
+}
