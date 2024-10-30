@@ -13,5 +13,7 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 - ~~add cool frog ascii art for printing as a logo~~ :frog:
 - add cool facts about frogs :nerd_face:
 
+\
 **credits**
-Joan Stark for creating frog ascii
+-
+- Joan Stark for creating frog ascii
