@@ -10,10 +10,9 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 - ~~add package readout for packages :package:~~
 - add total and used system memory readout :desktop_computer:
 - add a config file(?) :memo:
-- ~~add cool frog ascii art for printing as a logo~~ :frog:
+- ~~add cool frog ascii art for printing as a logo :frog:~~
 - add cool facts about frogs :nerd_face:
 
-\
 **credits**
 -
 - Joan Stark for creating frog ascii

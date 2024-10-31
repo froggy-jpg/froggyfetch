@@ -7,8 +7,10 @@ fn main() {
     let os = froggyfetch::fetch_os();
     let shell = froggyfetch::fetch_shell();
     let uptime = froggyfetch::fetch_uptime();
-    let mem_used = froggyfetch::fetch_used_mem();
-    let mem_total = froggyfetch::fetch_total_mem();
+    let mem_used_str = froggyfetch::fetch_used_mem();
+    let mem_used = mem_used_str.parse::<i32>().unwrap();
+    let mem_total_str = froggyfetch::fetch_total_mem();
+    let mem_total = mem_total_str.parse::<i32>().unwrap();
     let packages = froggyfetch::fetch_packages();
 
     println!("╭─────────────────────┬────────╮");
@@ -18,7 +20,7 @@ fn main() {
     println!("│{}│ {} │ {}", r"    _ (   _   ) _    ".green(), "  os ".green(), os);
     println!("│{}│ {} │ {}", r"   / \/`-----'\/ \   ".green(), " shll".green(), shell);
     println!("│{}├────────┤", r" __\ ( (     ) ) /__ ".green());
-    println!("│{}│ {} │ {} | {}", r" )   /\ \._./ /\   ( ".green(), "󰅐 mem ".green(), mem_used, mem_total);
+    println!("│{}│ {} │ {} | {}", r" )   /\ \._./ /\   ( ".green(), " memr".green(), mem_used / 1024, mem_total / 1024);
     println!("│{}│ {} │ {}", r"  )_/ /|\   /|\ \_(  ".green(), "󰅐 uptm".green(), uptime);
     println!("│{}│ {} │ {}", "                     ".green(), "󰏖 pkgs".green(), packages);
     println!("╰─────────────────────┴────────╯")
