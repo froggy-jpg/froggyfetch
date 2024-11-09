@@ -129,7 +129,10 @@
     "fact": "Colorful frogs are usually poisonous to predators, so their skin is a warning system.",
     "source": "frostingandglue"
   },
-  { "fact": "Frogs use their tongue to catch prey.", "source": "" },
+  {
+    "fact": "Frogs use their tongue to catch prey.",
+    "source": "frostingandglue"
+  },
   {
     "fact": "A frog’s tongue is around three times longer than its body.",
     "source": "frostingandglue"
