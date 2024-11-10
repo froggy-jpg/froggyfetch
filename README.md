@@ -2,7 +2,7 @@
 
 hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system fetch for linux, written in rust :crab:
 
-![Screenshot From 2024-10-31 13-40-50](https://github.com/user-attachments/assets/398b150a-5201-4214-9a0b-cd495f4690b4)
+![image](https://github.com/user-attachments/assets/1b571d08-96f0-4b11-bcb5-a0c76d6c7f81)
 
 **todo:**
 -
