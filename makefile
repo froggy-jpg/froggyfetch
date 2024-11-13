@@ -1,7 +1,5 @@
-all: cargo
-
-cargo:
-    cargo build --release
+all: install
 
 install:
-    sudo cp ./target/release/froggyfetch /usr/bin/froggyfetch
+	cargo build --release
+	sudo cp ./target/release/froggyfetch /usr/bin/froggyfetch
