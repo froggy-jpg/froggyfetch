@@ -4,6 +4,15 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 
 ![image](https://github.com/user-attachments/assets/1b571d08-96f0-4b11-bcb5-a0c76d6c7f81)
 
+**installing**
+-
+**from source:**
+```bash
+git clone https://github.com/froggy-jpg/froggyfetch
+cd froggyfetch
+make
+```
+
 **todo:**
 -
 **1.0:**
@@ -11,7 +20,7 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 - ~~add package readout for packages :package:~~
 - ~~add total and used system memory readout :desktop_computer:~~
 - ~~add cool frog ascii art for printing as a logo :frog:~~
-- add a make file :memo:
+- ~~add a make file :memo:~~
 - release :3 :frog:
 
 **1.1:**
@@ -19,4 +28,5 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 
 **credits**
 -
+- [ClaireRoush](https://github.com/ClaireRoush) for helping with stuff
 - Joan Stark for creating frog ascii
