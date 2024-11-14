@@ -2,7 +2,7 @@
 
 hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system fetch for linux, written in rust :crab:
 
-![image](https://github.com/user-attachments/assets/1b571d08-96f0-4b11-bcb5-a0c76d6c7f81)
+![Screenshot From 2024-11-14 20-59-28](https://github.com/user-attachments/assets/f433f54b-a58f-40d6-be84-0626d19289cd)
 
 **installing**
 -
@@ -15,16 +15,14 @@ make
 
 **todo:**
 -
-**1.0:**
 - ~~add main system info like kernel, operating system and such :star:~~
 - ~~add package readout for packages :package:~~
 - ~~add total and used system memory readout :desktop_computer:~~
 - ~~add cool frog ascii art for printing as a logo :frog:~~
 - ~~add a make file :memo:~~
-- release :3 :frog:
-
-**1.1:**
 - add cool facts about frogs :nerd_face:
+- add package to  the aur :blue_book:
+- release :3 :frog:
 
 **credits**
 -
