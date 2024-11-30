@@ -12,12 +12,15 @@ hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system f
 
 **installing**
 -
-**from source:**
+1: **install** a [nerdfont](https://www.nerdfonts.com/) for characters to display correctly in your terminal
+
+2: **build** the package from source:
 ```bash
 git clone https://github.com/froggy-jpg/froggyfetch
 cd froggyfetch
 make
 ```
+3: enjoy your really cool system fetch :3
 
 **todo:**
 -
@@ -27,10 +30,10 @@ make
 - ~~add cool frog ascii art for printing as a logo :frog:~~
 - ~~add a make file :memo:~~
 - add cool facts about frogs :nerd_face:
-- add package to  the aur :blue_book:
-- release :3 :frog: 🐸
+- add package to the aur :blue_book:
+- release :3 :frog:
 
 **credits**
 -
-- [ClaireRoush](https://github.com/ClaireRoush) for helping with stuff
-- Joan Stark for creating frog ascii
+- [ClaireRoush](https://github.com/ClaireRoush) for helping with *a lot* stuff :green_heart:
+- Joan Stark for creating frog ascii :pray:
