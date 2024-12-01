@@ -1,3 +1,4 @@
+pub mod facts;
 use std::{env, process::{Command, Stdio}};
 
 pub fn fetch_user() -> String {
