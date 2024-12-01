@@ -23,5 +23,6 @@ fn main() {
     println!("│{}│ {} │ {} | {}", r" )   /\ \._./ /\   ( ".green(), " ".green(), mem_used / 1024, mem_total / 1024);
     println!("│{}│ {} │ {}", r"  )_/ /|\   /|\ \_(  ".green(), "󰅐 ".green(), uptime);
     println!("│{}│ {} │ {}", "                     ".green(), "󰏖 ".green(), packages);
-    println!("╰─────────────────────┴────╯")
+    println!("╰─────────────────────┴────╯");
+
 }
