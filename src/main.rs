@@ -25,4 +25,11 @@ fn main() {
     println!("│{}│ {} │ {}", "                     ".green(), "󰏖 ".green(), packages);
     println!("╰─────────────────────┴────╯");
 
+    let frog_fact = froggyfetch::facts::frog_fact();
+}
+
+fn help_msg() {
+    println!("{}", "OPTIONS".green());
+    println!("  -f, --fact  show a random frog fact");
+    println!("  -h, --help  show this message");
 }
