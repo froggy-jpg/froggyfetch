@@ -1,4 +1,3 @@
-use std::env;
 use colored::Colorize;
 
 fn main() {
@@ -14,7 +13,9 @@ fn main() {
     let uptime = froggyfetch::fetch_uptime();
     let packages = froggyfetch::fetch_packages();
 
-    let options = froggyfetch::args::fetch_options();
+    if froggyfetch::args::fetch_options() {
+        return;
+    }
 
     println!("╭─────────────────────┬────╮");
     println!("│{}│ {} │ {}", "        _   _        ".green(), " ".green(), user);

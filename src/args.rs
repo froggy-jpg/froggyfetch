@@ -2,16 +2,18 @@ use std::env;
 use colored::Colorize;
 use crate::facts;
 
-pub fn fetch_options() {
+pub fn fetch_options() -> bool {
     let args: Vec<String> = env::args().collect();
 
     if args.contains(&String::from("-h")) {
-       help_msg()
+       help_msg();
+       return true;
     }
 
     if args.contains(&String::from("-f")) {
-        frog_fact()
-     }
+        frog_fact();
+        return true;
+     } false
 }
 
 pub fn help_msg() {
