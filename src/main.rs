@@ -1,3 +1,4 @@
+use std::env;
 use colored::Colorize;
 
 fn main() {
@@ -6,13 +7,14 @@ fn main() {
 //  let kernel = froggyfetch::fetch_kernel();
     let os = froggyfetch::fetch_os();
     let shell = froggyfetch::fetch_shell();
-    
     let mem_used_str = froggyfetch::fetch_used_mem();
     let mem_used = mem_used_str.parse::<i32>().unwrap();
     let mem_total_str = froggyfetch::fetch_total_mem();
     let mem_total = mem_total_str.parse::<i32>().unwrap();
     let uptime = froggyfetch::fetch_uptime();
     let packages = froggyfetch::fetch_packages();
+
+    let options = froggyfetch::args::fetch_options();
 
     println!("╭─────────────────────┬────╮");
     println!("│{}│ {} │ {}", "        _   _        ".green(), " ".green(), user);
@@ -24,12 +26,4 @@ fn main() {
     println!("│{}│ {} │ {}", r"  )_/ /|\   /|\ \_(  ".green(), "󰅐 ".green(), uptime);
     println!("│{}│ {} │ {}", "                     ".green(), "󰏖 ".green(), packages);
     println!("╰─────────────────────┴────╯");
-
-    let frog_fact = froggyfetch::facts::frog_fact();
-}
-
-fn help_msg() {
-    println!("{}", "OPTIONS".green());
-    println!("  -f, --fact  show a random frog fact");
-    println!("  -h, --help  show this message");
 }
