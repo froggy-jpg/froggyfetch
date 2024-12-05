@@ -1,3 +1,5 @@
+pub mod facts;
+pub mod args;
 use std::{env, process::{Command, Stdio}};
 
 pub fn fetch_user() -> String {
@@ -115,3 +117,4 @@ pub fn fetch_packages() -> String {
     let package_count = String::from_utf8(count2.stdout).unwrap();
     package_count.replace('\n', "")
 }
+
