@@ -1,3 +1,4 @@
+use colored::Colorize;
 use rand::Rng;
 use serde_json::{Result, Value};
 
@@ -135,7 +136,7 @@ pub fn frog_fact() -> Result<()> {
 
     let num = rand::thread_rng().gen_range(0..40);
 
-    println!("random frog fact: {}", v["facts"][num]["fact"]);
+    println!("{} {}", "random frog fact:".green().bold(), v["facts"][num]["fact"]);
 
     Ok(())
 }

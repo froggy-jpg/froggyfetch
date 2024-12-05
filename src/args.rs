@@ -17,7 +17,7 @@ pub fn fetch_options() -> bool {
 }
 
 pub fn help_msg() {
-    println!("{}", "OPTIONS".green());
+    println!("{}", "OPTIONS".green().bold());
     println!("  -f, --fact  show a random frog fact");
     println!("  -h, --help  show this message");
 }
