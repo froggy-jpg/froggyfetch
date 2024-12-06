@@ -1,6 +1,8 @@
+// import the colored library for... uhhh... colors :frog:
 use colored::Colorize;
 
 fn main() {
+// all the info imports from lib.rs
     let user = froggyfetch::fetch_user();
     let hname = froggyfetch::fetch_hname();
 //  let kernel = froggyfetch::fetch_kernel();
@@ -13,18 +15,21 @@ fn main() {
     let uptime = froggyfetch::fetch_uptime();
     let packages = froggyfetch::fetch_packages();
 
+// if cli arguments are run dont print the frog below :frog:
     if froggyfetch::args::fetch_options() {
         return;
     }
 
+// print the info and frog ascii, the first {} is used to print the frog ascii so that i can use colored,
+// then the nerdfont characters for system info and info itself 
     println!("╭─────────────────────┬────╮");
-    println!("│{}│ {} │ {}", "        _   _        ".green(), " ".green(), user);
-    println!("│{}│ {} │ {}", "       (.)_(.)       ".green(), " ".green(), hname);
-    println!("│{}│ {} │ {}", r"    _ (   _   ) _    ".green(), " ".green(), os);
-    println!("│{}│ {} │ {}", r"   / \/`-----'\/ \   ".green(), " ".green(), shell);
-    println!("│{}├────┤", r" __\ ( (     ) ) /__ ".green());
-    println!("│{}│ {} │ {} | {}", r" )   /\ \._./ /\   ( ".green(), " ".green(), mem_used / 1024, mem_total / 1024);
-    println!("│{}│ {} │ {}", r"  )_/ /|\   /|\ \_(  ".green(), "󰅐 ".green(), uptime);
-    println!("│{}│ {} │ {}", "                     ".green(), "󰏖 ".green(), packages);
+    println!("│{}│ {} │ {}", "        _   _        ".truecolor(152,251,152), " ".truecolor(220,20,60), user);
+    println!("│{}│ {} │ {}", "       (.)_(.)       ".truecolor(152,251,152), " ".truecolor(255,127,80), hname);
+    println!("│{}│ {} │ {}", r"    _ (   _   ) _    ".truecolor(152,251,152), " ".truecolor(255,255,102), os);
+    println!("│{}│ {} │ {}", r"   / \/`-----'\/ \   ".truecolor(152,251,152), " ".truecolor(152,251,152), shell);
+    println!("│{}├────┤", r" __\ ( (     ) ) /__ ".truecolor(152,251,152));
+    println!("│{}│ {} │ {} | {}", r" )   /\ \._./ /\   ( ".truecolor(152,251,152), " ".truecolor(65,105,225), mem_used / 1024, mem_total / 1024);
+    println!("│{}│ {} │ {}", r"  )_/ /|\   /|\ \_(  ".truecolor(152,251,152), "󰅐 ".truecolor(135,206,250), uptime);
+    println!("│{}│ {} │ {}", "                     ".truecolor(152,251,152), "󰏖 ".truecolor(238,130,238), packages);
     println!("╰─────────────────────┴────╯");
 }
