@@ -6,9 +6,10 @@
                     |___/ |___/  |___/                      
 
 
-hi, this is **froggyfetch** :frog:, a blazingly fast :fire: open source system fetch for linux, written in rust :crab:
+hi, this is **froggyfetch** :sparkles:, the cutest open source system fetch for linux, written in rust :crab:\
+now with frog facts! :frog: (use the **-f** flag :3)
 
-![image](https://github.com/user-attachments/assets/f48e81b6-41e3-4ca9-a325-13e26a8fb891)
+![image](https://github.com/user-attachments/assets/4c3868f6-cfa3-415c-ad31-80a6bdc7eaa0)
 
 **installing**
 -
