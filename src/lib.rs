@@ -2,6 +2,7 @@ pub mod facts;
 pub mod args;
 use std::{env, process::{Command, Stdio}};
 
+// fetch user name with id command and then use .replace to remove the unnecessary stuff
 pub fn fetch_user() -> String {
     let user = Command::new("id").arg("-un").output();
     let user = match user {
@@ -11,6 +12,7 @@ pub fn fetch_user() -> String {
     user.replace('\n', "")
 } 
 
+// fetch host name with uname
 pub fn fetch_hname() -> String {
     let hname = Command::new("uname").arg("-n").output();
     let hname = match hname {
@@ -20,6 +22,7 @@ pub fn fetch_hname() -> String {
     hname.replace('\n', "")
 }
 
+// fetch kernel with uname
 pub fn fetch_kernel() -> String {
     let kernel = Command::new("uname").arg("-r").output();
     let kernel = match kernel {
@@ -29,6 +32,7 @@ pub fn fetch_kernel() -> String {
     kernel.replace('\n', "")
 }
 
+// fetch os with lsb release, print short description with -sd flag
 pub fn fetch_os() -> String {
     let os = Command::new("lsb_release").arg("-sd").output();
     let os = match os {
@@ -38,6 +42,10 @@ pub fn fetch_os() -> String {
     os.replace('\n', "").replace('"', "")
 }
 
+// fetch shell from env variable, its a bit unreliable because
+// there are many ways to set your shell and this only accounts for if the user
+// has set their shell as their default with "chsh"
+// i should probably change this later...
 pub fn fetch_shell() -> String {
     let shell = "SHELL";
     match env::var(shell) {
@@ -50,6 +58,8 @@ pub fn fetch_shell() -> String {
     }
 }
 
+// show uptime, use "pretty" flag and replace long words with a corresponding letter
+// as well as removing unnecessary struff
 pub fn fetch_uptime() -> String {
     let uptime = Command::new("uptime").arg("-p").output();
     let uptime = match uptime {
@@ -69,6 +79,7 @@ pub fn fetch_uptime() -> String {
     uptime.replace('\n', "").replace(',', "").replace(" ", "")
 }
 
+// fetch memory info by piping grep into cat /proc/meminfo, then converting it to string 
 pub fn fetch_used_mem() -> String {
     let mut used1 = Command::new("cat")
         .arg("/proc/meminfo")
@@ -103,6 +114,8 @@ pub fn fetch_total_mem() -> String {
         .replace(" kB", "")
 }
 
+// count packages by piping wordcount into pacman
+// listing all the packages through -Qq and counting them that way :frog:
 pub fn fetch_packages() -> String {
     let mut count1 = Command::new("pacman")
         .arg("-Qq")
