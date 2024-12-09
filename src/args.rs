@@ -6,22 +6,23 @@ use crate::facts;
 pub fn fetch_options() -> bool {
     let args: Vec<String> = env::args().collect();
 
-    if args.contains(&String::from("-h")) {
-       help_msg();
-       return true;
+    if args.contains(&String::from("-h")) || args.contains(&String::from("--help")) {
+        help_msg();
+        return true;
     }
 
-    if args.contains(&String::from("-f")) {
+    if args.contains(&String::from("-f")) || args.contains(&String::from("--fact")) {
         frog_fact();
         return true;
-     } false
+    }
+    false
 }
 
 // prints help message
 pub fn help_msg() {
-    println!("{}", "OPTIONS".truecolor(152,251,152).bold());
-    println!("{} show a random frog fact", "  -f ".bold());
-    println!("{} show this message", "  -h ".bold());
+    println!("{}", "OPTIONS".truecolor(152, 251, 152).bold());
+    println!("{} show a random frog fact", "  -f, --fact ".bold());
+    println!("{} show this message", "  -h, --help ".bold());
 }
 
 // imports facts from facts.rs

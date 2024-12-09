@@ -7,7 +7,7 @@
 
 
 hi, this is **froggyfetch** :sparkles:, the cutest open source system fetch for linux, written in rust :crab:\
-now with frog facts! :frog: (use the **-f** flag :3)
+now with frog facts! :frog: (use the **--fact** flag :3)
 
 ![image](https://github.com/user-attachments/assets/4c3868f6-cfa3-415c-ad31-80a6bdc7eaa0)
 
