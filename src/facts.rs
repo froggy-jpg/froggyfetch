@@ -136,14 +136,18 @@ pub fn frog_fact() -> Result<()> {
         }
     "#;
 
-// parses json into a string
+    // parses json into a string
     let v: Value = serde_json::from_str(data)?;
 
-// chooses a random number
+    // chooses a random number
     let num = rand::thread_rng().gen_range(0..41);
 
-// prints a frog fact by fetching them from json and choosing a random one
-    println!("{} {}", "random frog fact:".truecolor(152,251,152).bold(), v["facts"][num]["fact"]);
+    // prints a frog fact by fetching them from json and choosing a random one
+    println!(
+        "{} {}",
+        "random frog fact:".truecolor(152, 251, 152).bold(),
+        v["facts"][num]["fact"]
+    );
 
     Ok(())
 }
