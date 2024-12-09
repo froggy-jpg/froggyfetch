@@ -1,6 +1,6 @@
-use crate::facts;
-use colored::Colorize;
 use std::env;
+use colored::Colorize;
+use crate::facts;
 
 // a bit janky, but checks if the user has set a flag by using an if statement
 pub fn fetch_options() -> bool {
